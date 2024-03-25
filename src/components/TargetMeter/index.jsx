@@ -1,18 +1,16 @@
 import Thermometer from 'react-thermometer-component'
 
-function TargetMeter() {
+function TargetMeter({ value }) {
   return (
-    <div>
-      <Thermometer
-        theme='light'
-        value='10'
-        max='100'
-        steps='1'
-        format='°C'
-        size='normal'
-        height='180'
-      />
-    </div>
+    <Thermometer
+      theme='light'
+      value={value}
+      max='100'
+      steps='1'
+      format='%'
+      size='large'
+      height='300'
+    />
   )
 }
 
