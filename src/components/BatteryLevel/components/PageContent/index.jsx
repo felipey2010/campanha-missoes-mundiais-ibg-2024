@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Header from '../Header'
 import Content from '../Content'
+import { motion } from 'framer-motion'
+import { slideInFromTop } from 'utils/Animations'
 
 function PageContent({ close }) {
   const [startAnimation, setStartAnimation] = useState(false)
@@ -13,7 +15,11 @@ function PageContent({ close }) {
   )
 
   return (
-    <div
+    <motion.div
+      variants={slideInFromTop}
+      initial='hidden'
+      animate='visible'
+      exit='hidden'
       id='default-modal'
       tabIndex='-1'
       aria-hidden='true'
@@ -30,7 +36,7 @@ function PageContent({ close }) {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
