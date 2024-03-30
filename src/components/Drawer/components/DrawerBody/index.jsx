@@ -1,7 +1,7 @@
 import { useApp } from 'context/AppContext'
 import { FaSave } from 'react-icons/fa'
 
-function DrawerBody({ handleClose }) {
+function DrawerBody() {
   const { useFn, onSubmit } = useApp()
 
   const { register, handleSubmit } = useFn
@@ -22,7 +22,7 @@ function DrawerBody({ handleClose }) {
           type='number'
           id='initial_percentage'
           name='initial_percentage'
-          {...register('initial_percentage')}
+          {...register('initial_percentage', { min: 0, max: 100 })}
           className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           placeholder='informe apenas números'
           required
@@ -40,7 +40,7 @@ function DrawerBody({ handleClose }) {
           type='number'
           id='final_percentage'
           name='final_percentage'
-          {...register('final_percentage')}
+          {...register('final_percentage', { min: 0, max: 100 })}
           className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           placeholder='informe a porcentagem final'
           required
@@ -55,6 +55,11 @@ function DrawerBody({ handleClose }) {
           <FaSave size={18} /> Salvar
         </button>
       </div>
+
+      <ul className='w-full flex flex-col text-red-600 text-sm list-disc px-4'>
+        <li>Valores - Minímo: 0 e maxímo: 100</li>
+        <li>Porcentagem final deve ser maior que inicial</li>
+      </ul>
     </form>
   )
 }

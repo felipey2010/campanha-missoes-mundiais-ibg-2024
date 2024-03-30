@@ -19,7 +19,7 @@ function DrawerContent({ open, handleClick }) {
           aria-labelledby='drawer-right-label'
         >
           <Header handleClick={handleClick} />
-          <DrawerBody handleClose={handleClick} />
+          <DrawerBody />
         </div>
       </div>
     </div>

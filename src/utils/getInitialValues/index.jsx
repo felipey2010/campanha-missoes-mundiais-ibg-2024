@@ -1,24 +1,9 @@
-import { useEffect, useState } from 'react'
-
 const getInitialPercentage = () => {
-  const [initialPercentage, setInitialPercentage] = useState(0)
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem('initial_percentage')
-    setInitialPercentage(storedValue ? parseInt(storedValue) : 0)
-  }, [])
-
-  return initialPercentage
+  return localStorage.getItem('initial_percentage') || 0
 }
 
 const getFinalPercentage = () => {
-  const [finalPercentage, setFinalPercentage] = useState(0)
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem('final_percentage')
-    setFinalPercentage(storedValue ? parseInt(storedValue) : 0)
-  }, [])
-  return finalPercentage
+  return localStorage.getItem('final_percentage') || 0
 }
 
-export { getInitialPercentage, getFinalPercentage }
+export { getFinalPercentage, getInitialPercentage }

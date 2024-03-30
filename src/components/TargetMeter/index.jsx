@@ -9,7 +9,7 @@ function TargetMeter({ value }) {
       steps='1'
       format='%'
       size='large'
-      height='300'
+      height='350'
     />
   )
 }

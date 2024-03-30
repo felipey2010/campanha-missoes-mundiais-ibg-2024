@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import ShowMeter from './components/ShowMeter'
 import PercentageValue from './components/PercentageValue'
+import { generateRandomNumber } from 'utils/RandomNumberGenerator'
 
 function Content({
   startLevel = 0,
@@ -21,14 +22,18 @@ function Content({
   const increment = useCallback(() => {
     if (percentage >= endLevel) return
 
-    console.log('Increasing')
-
     const timer = setTimeout(() => {
       if (percentage < endLevel) {
-        setPercentage((prevPercentage) => prevPercentage + 1)
-        // increment()
+        if (percentage < 0.8 * endLevel) {
+          setPercentage(
+            (prevPercentage) =>
+              parseInt(prevPercentage) + generateRandomNumber(1, 5)
+          )
+        } else {
+          setPercentage((prevPercentage) => parseInt(prevPercentage) + 1)
+        }
       }
-    }, 1000)
+    }, getRandomTime())
 
     return () => clearTimeout(timer)
   }, [percentage])
@@ -38,6 +43,14 @@ function Content({
       increment()
     }
   }, [startAnimation, increment])
+
+  const getRandomTime = () => {
+    if (percentage < 0.8 * endLevel) {
+      return generateRandomNumber(700, 1000)
+    } else {
+      return generateRandomNumber(1500, 2000)
+    }
+  }
 
   return (
     <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center'>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Content from './components/Content'
 import Header from './components/Header'
 
@@ -6,15 +6,12 @@ const BatteryLevel = ({ show, close }) => {
   if (!show) return
   const [startAnimation, setStartAnimation] = useState(false)
 
-  const [initialPercentage, setInitialPercentage] = useState(0)
-  const [finalPercentage, setFinalPercentage] = useState(0)
-
-  useEffect(() => {
-    const initialValue = localStorage.getItem('initial_percentage')
-    const finalValue = localStorage.getItem('final_percentage')
-    setInitialPercentage(initialValue)
-    setFinalPercentage(finalValue)
-  }, [show])
+  const [initialPercentage] = useState(
+    localStorage.getItem('initial_percentage') || 0
+  )
+  const [finalPercentage] = useState(
+    localStorage.getItem('final_percentage') || 0
+  )
 
   return (
     <div

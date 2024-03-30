@@ -28,12 +28,18 @@ export default function AppProvider({ children }) {
 
   function onSubmit(data) {
     const { initial_percentage, final_percentage } = data
+    const { setValue } = useFn
     try {
-      storeInputValues(initial_percentage, final_percentage)
+      const initial = parseInt(initial_percentage)
+      const final = parseInt(final_percentage)
+
+      storeInputValues(initial, final)
+      setValue('initial_percentage', initial)
+      setValue('final_percentage', final)
       showToast('Valores salvos', 'success')
     } catch (error) {
       console.log('Error: ', error)
-      showToast('Erro salvando valores', 'error')
+      showToast(error.message, 'error')
     }
   }
 
@@ -49,7 +55,7 @@ export default function AppProvider({ children }) {
 
   function isValidInput(initialPercentage, finalPercentage) {
     if (isNaN(initialPercentage) || isNaN(finalPercentage)) {
-      return false
+      throw Error('Os valores informados precisam ser números')
     }
 
     if (
@@ -59,7 +65,7 @@ export default function AppProvider({ children }) {
       finalPercentage > 100 ||
       finalPercentage < initialPercentage
     ) {
-      return false
+      throw Error('Uma das regras sobre as porcentagens foi violada')
     }
 
     return true

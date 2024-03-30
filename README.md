@@ -5,3 +5,4 @@ Uma plataforma simples de mostrar a contribuição arrecadada em prol de missõe
 ## FEATURES IMPLEMENTADOS
 
 - Landing page com tema e versículo de missões
+- Animação de um termômetro

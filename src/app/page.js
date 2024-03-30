@@ -22,6 +22,7 @@ export default function Home() {
             height={300}
             src={IMG_TEMA}
             alt='no poder do espírito, vamos completar a missão'
+            priority
           />
           <div className='w-full flex flex-col gap-4 bg-black'>
             <span className='text-2xl tracking-normal text-justify'>
@@ -40,6 +41,7 @@ export default function Home() {
         alt='imagem de grupo de pessoas'
         className='absolute bottom-0 left-1/2 -translate-x-1/2 bg-transparent'
         style={{ zIndex: -1 }}
+        priority
       />
       <BatteryLevel show={show} close={handleClick} />
     </main>
