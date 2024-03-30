@@ -28,7 +28,7 @@ export default function Home() {
             <span className='text-2xl tracking-normal text-justify'>
               Mas receberão poder quando o Espírito Santo descer sobre vocês, e
               serão minhas testemunhas em Jerusalém, em toda a Judéia e Samaria,
-              e até os confins da terra".
+              e até os confins da terra&quot;.
             </span>
             <span className='text-lg'>Atos 1:8</span>
           </div>
