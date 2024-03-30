@@ -17,7 +17,16 @@ function Content({
     }, 5000)
 
     return () => clearTimeout(timer)
-  }, [startLevel])
+    /* eslint-disable-next-line padded-blocks */
+  }, [startLevel, setStartAnimation])
+
+  const getRandomTime = useCallback(() => {
+    if (percentage < 0.8 * endLevel) {
+      return generateRandomNumber(700, 1000)
+    } else {
+      return generateRandomNumber(1500, 2000)
+    }
+  }, [endLevel, percentage])
 
   const increment = useCallback(() => {
     if (percentage >= endLevel) return
@@ -36,24 +45,16 @@ function Content({
     }, getRandomTime())
 
     return () => clearTimeout(timer)
-  }, [percentage])
+  }, [percentage, endLevel, getRandomTime])
 
   useEffect(() => {
     if (startAnimation && percentage <= endLevel) {
       increment()
     }
-  }, [startAnimation, increment])
-
-  const getRandomTime = () => {
-    if (percentage < 0.8 * endLevel) {
-      return generateRandomNumber(700, 1000)
-    } else {
-      return generateRandomNumber(1500, 2000)
-    }
-  }
+  }, [startAnimation, increment, endLevel, percentage])
 
   return (
-    <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center'>
+    <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center gap-4'>
       <ShowMeter
         startAnimation={startAnimation}
         startLevel={startLevel}
