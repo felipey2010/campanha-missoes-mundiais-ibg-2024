@@ -5,7 +5,7 @@ function Navbar({ handleModal }) {
   return (
     <div className='w-full flex items-center justify-center relative'>
       <div className='w-full max-w-[1980px] flex items-center justify-between'>
-        <div className='flex items-center gap-2 text-2xl font-bold'>
+        <div className='flex items-center gap-2 text-xl sm:text-2xl font-bold'>
           MISSÕES <span className='text-[#3f83f8]'>MUNDIAIS</span>
         </div>
         <div className='flex items-center gap-4'>
@@ -13,7 +13,7 @@ function Navbar({ handleModal }) {
           <Button
             type='button'
             onClick={handleModal}
-            className='bg-[#3f83f8] hover:!bg-[#3b70c9]'
+            className='w-[64px] sm:w-[70px] h-8 sm:min-h-9 bg-[#3f83f8] hover:!bg-[#3b70c9]'
           >
             ALVO
           </Button>
