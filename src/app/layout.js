@@ -20,7 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='pt-br'>
-      <body className={poppins.className} suppressHydrationWarning={true}>
+      <body
+        className={`bg-black $poppins.className`}
+        suppressHydrationWarning={true}
+      >
         <ToastifyContainer />
         <AppProvider>{children}</AppProvider>
       </body>
