@@ -38,7 +38,7 @@ export default function Home() {
             initial='initial'
             animate='animate'
             custom={5}
-            className='w-full flex flex-col gap-4 text-white'
+            className='w-full flex flex-col gap-4 text-white bg-black'
           >
             <span className='text-2xl tracking-normal text-justify'>
               Mas receberão poder quando o Espírito Santo descer sobre vocês, e
@@ -55,7 +55,7 @@ export default function Home() {
         animate='animate'
         custom={8}
         className='absolute bottom-0 left-0 right-0 bg-transparent flex items-center justify-center'
-        // style={{ zIndex: -1 }}
+        style={{ zIndex: -1 }}
       >
         <Image
           width={1000}

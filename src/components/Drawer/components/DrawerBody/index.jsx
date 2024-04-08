@@ -14,7 +14,7 @@ function DrawerBody() {
       <div className='w-full'>
         <label
           htmlFor='initial_percentage'
-          className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+          className='block mb-2 text-sm font-medium text-white'
         >
           Porcentagem inicial
         </label>
@@ -23,7 +23,7 @@ function DrawerBody() {
           id='initial_percentage'
           name='initial_percentage'
           {...register('initial_percentage', { min: 0, max: 100 })}
-          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+          className='bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5'
           placeholder='informe apenas números'
           required
         />
@@ -32,7 +32,7 @@ function DrawerBody() {
       <div className='w-full'>
         <label
           htmlFor='final_percentage'
-          className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+          className='block mb-2 text-sm font-medium text-white'
         >
           Porcentagem final
         </label>
@@ -41,7 +41,7 @@ function DrawerBody() {
           id='final_percentage'
           name='final_percentage'
           {...register('final_percentage', { min: 0, max: 100 })}
-          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+          className='bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5'
           placeholder='informe a porcentagem final'
           required
         />
@@ -50,13 +50,13 @@ function DrawerBody() {
       <div className='w-full'>
         <button
           type='submit'
-          className='text-white justify-center flex items-center gap-2 bg-blue-700 hover:bg-blue-800 w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
+          className='text-white justify-center flex items-center gap-2 bg-purple-700 hover:bg-purple-800 w-full focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800'
         >
           <FaSave size={18} /> Salvar
         </button>
       </div>
 
-      <ul className='w-full flex flex-col text-red-600 text-sm list-disc px-4'>
+      <ul className='w-full flex flex-col text-red-400 text-sm list-disc px-4'>
         <li>Valores - Minímo: 0 e maxímo: 100</li>
         <li>Porcentagem final deve ser maior que inicial</li>
       </ul>

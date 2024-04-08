@@ -20,7 +20,7 @@ function DrawerContent({ open, handleClick }) {
           <div className='w-full h-full relative'>
             <div
               id='drawer-right-example'
-              className='h-full absolute top-0 right-0 overflow-y-auto bg-white w-full sm:w-96 dark:bg-gray-800'
+              className='h-full absolute top-0 right-0 overflow-y-auto bg-gray-900 w-full sm:w-96'
               tabIndex='-1'
               aria-labelledby='drawer-right-label'
             >

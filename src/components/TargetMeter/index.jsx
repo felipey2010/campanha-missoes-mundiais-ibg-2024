@@ -3,7 +3,7 @@ import Thermometer from 'react-thermometer-component'
 function TargetMeter({ value }) {
   return (
     <Thermometer
-      theme='light'
+      theme='dark'
       value={value}
       max='100'
       steps='1'
