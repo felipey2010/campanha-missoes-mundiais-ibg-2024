@@ -18,7 +18,7 @@ export default function Home() {
     <main className='w-full h-full flex justify-center relative overflow-hidden'>
       <div className='w-full h-full flex flex-col items-center gap-11 md:w-3/5 p-4'>
         <Navbar handleModal={handleClick} />
-        <div className='w-full h-full text-center flex flex-col items-center gap-11 bg-black'>
+        <div className='w-full h-full text-center flex flex-col items-center gap-11'>
           <motion.div
             variants={fadeOpacity_2}
             initial='initial'
@@ -38,7 +38,7 @@ export default function Home() {
             initial='initial'
             animate='animate'
             custom={5}
-            className='w-full flex flex-col gap-4'
+            className='w-full flex flex-col gap-4 text-white'
           >
             <span className='text-2xl tracking-normal text-justify'>
               Mas receberão poder quando o Espírito Santo descer sobre vocês, e

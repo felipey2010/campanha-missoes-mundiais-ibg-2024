@@ -6,7 +6,8 @@ function Navbar({ handleModal }) {
     <div className='w-full flex items-center justify-center relative'>
       <div className='w-full max-w-[1980px] flex items-center justify-between'>
         <div className='flex items-center gap-2 text-xl sm:text-2xl font-bold'>
-          MISSÕES <span className='text-[#3f83f8]'>MUNDIAIS</span>
+          <span className='text-white'>MISSÕES</span>{' '}
+          <span className='text-[#3f83f8]'>MUNDIAIS</span>
         </div>
         <div className='flex items-center gap-4'>
           <Drawer />
