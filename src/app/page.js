@@ -15,10 +15,10 @@ export default function Home() {
   }
 
   return (
-    <main className='w-full h-full flex justify-center relative overflow-hidden'>
+    <main className='w-full h-full flex justify-center relative overflow-hidden bg-black'>
       <div className='w-full h-full flex flex-col items-center gap-11 md:w-3/5 p-4'>
         <Navbar handleModal={handleClick} />
-        <div className='w-full h-full text-center flex flex-col items-center gap-11'>
+        <div className='w-full h-full text-center flex flex-col items-center gap-11 bg-black'>
           <motion.div
             variants={fadeOpacity_2}
             initial='initial'
