@@ -15,7 +15,7 @@ export default function Home() {
   }
 
   return (
-    <main className='w-full h-full flex justify-center relative overflow-hidden bg-black'>
+    <main className='w-full h-full flex justify-center relative overflow-hidden'>
       <div className='w-full h-full flex flex-col items-center gap-11 md:w-3/5 p-4'>
         <Navbar handleModal={handleClick} />
         <div className='w-full h-full text-center flex flex-col items-center gap-11 bg-black'>
@@ -38,7 +38,7 @@ export default function Home() {
             initial='initial'
             animate='animate'
             custom={5}
-            className='w-full flex flex-col gap-4 bg-black'
+            className='w-full flex flex-col gap-4'
           >
             <span className='text-2xl tracking-normal text-justify'>
               Mas receberão poder quando o Espírito Santo descer sobre vocês, e
@@ -55,7 +55,7 @@ export default function Home() {
         animate='animate'
         custom={8}
         className='absolute bottom-0 left-0 right-0 bg-transparent flex items-center justify-center'
-        style={{ zIndex: -1 }}
+        // style={{ zIndex: -1 }}
       >
         <Image
           width={1000}
