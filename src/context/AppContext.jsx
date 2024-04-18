@@ -62,8 +62,9 @@ export default function AppProvider({ children }) {
       initialPercentage < 0 ||
       initialPercentage > 100 ||
       finalPercentage < 0 ||
-      finalPercentage > 100 ||
-      finalPercentage < initialPercentage
+      // finalPercentage > 100 ||
+      finalPercentage < initialPercentage ||
+      finalPercentage === initialPercentage
     ) {
       throw Error('Uma das regras sobre as porcentagens foi violada')
     }

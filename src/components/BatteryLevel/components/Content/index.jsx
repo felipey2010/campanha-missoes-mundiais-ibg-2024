@@ -1,38 +1,23 @@
+import TargetMeter from 'components/TargetMeter'
 import { useCallback, useEffect, useState } from 'react'
-import ShowMeter from './components/ShowMeter'
-import PercentageValue from './components/PercentageValue'
 import { generateRandomNumber } from 'utils/RandomNumberGenerator'
+import PercentageValue from './components/PercentageValue'
 
-function Content({
-  startLevel = 0,
-  endLevel = 0,
-  startAnimation = false,
-  setStartAnimation,
-}) {
-  const [percentage, setPercentage] = useState(startLevel)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setStartAnimation((prev) => !prev)
-    }, 5000)
-
-    return () => clearTimeout(timer)
-    /* eslint-disable-next-line padded-blocks */
-  }, [startLevel, setStartAnimation])
+function Content({ startLevel = 0, endLevel = 0, startAnimation = false }) {
+  const [percentage, setPercentage] = useState(parseInt(startLevel))
 
   const getRandomTime = useCallback(() => {
-    if (percentage < 0.8 * endLevel) {
-      return generateRandomNumber(700, 1000)
-    } else {
-      return generateRandomNumber(1500, 2000)
-    }
+    return percentage < 0.8 * endLevel
+      ? generateRandomNumber(700, 1000)
+      : generateRandomNumber(1300, 2000)
   }, [endLevel, percentage])
 
   const increment = useCallback(() => {
-    if (percentage >= endLevel) return
+    const percentValue = parseInt(percentage)
+    const endValue = parseInt(endLevel)
 
     const timer = setTimeout(() => {
-      if (percentage < endLevel) {
+      if (percentValue < endValue) {
         if (percentage < 0.8 * endLevel) {
           setPercentage(
             (prevPercentage) =>
@@ -48,18 +33,19 @@ function Content({
   }, [percentage, endLevel, getRandomTime])
 
   useEffect(() => {
-    if (startAnimation && percentage <= endLevel) {
+    const percentValue = parseInt(percentage)
+    const endValue = parseInt(endLevel)
+
+    if (startAnimation && percentValue < endValue) {
       increment()
     }
   }, [startAnimation, increment, endLevel, percentage])
 
   return (
     <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center gap-4'>
-      <ShowMeter
-        startAnimation={startAnimation}
-        startLevel={startLevel}
-        percentage={percentage}
-      />
+      <div className='min-w-20 min-h-56 py-4'>
+        <TargetMeter value={startAnimation ? percentage : startLevel} />
+      </div>
       <PercentageValue percentage={percentage} />
     </div>
   )

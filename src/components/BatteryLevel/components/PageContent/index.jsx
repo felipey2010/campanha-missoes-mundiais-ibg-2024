@@ -1,18 +1,26 @@
-import { useState } from 'react'
-import Header from '../Header'
-import Content from '../Content'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { slideInFromTop } from 'utils/Animations'
+import Content from '../Content'
+import Header from '../Header'
 
 function PageContent({ close }) {
   const [startAnimation, setStartAnimation] = useState(false)
-
   const [initialPercentage] = useState(
     localStorage.getItem('initial_percentage') || 0
   )
   const [finalPercentage] = useState(
     localStorage.getItem('final_percentage') || 0
   )
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartAnimation(true)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+    /* eslint-disable-next-line padded-blocks */
+  }, [])
 
   return (
     <motion.div
@@ -32,7 +40,6 @@ function PageContent({ close }) {
             startLevel={initialPercentage}
             endLevel={finalPercentage}
             startAnimation={startAnimation}
-            setStartAnimation={setStartAnimation}
           />
         </div>
       </div>
