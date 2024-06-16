@@ -23,7 +23,7 @@ function DrawerBody() {
           id='initial_percentage'
           name='initial_percentage'
           {...register('initial_percentage', { min: 0, max: 100 })}
-          className='bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5'
+          className='bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-primary/85 focus:border-primary/85 block w-full p-2.5'
           placeholder='informe apenas números'
           required
         />
@@ -41,7 +41,7 @@ function DrawerBody() {
           id='final_percentage'
           name='final_percentage'
           {...register('final_percentage', { min: 0, max: 100 })}
-          className='bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5'
+          className='bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-primary/85 focus:border-primary/85 block w-full p-2.5'
           placeholder='informe a porcentagem final'
           required
         />
@@ -50,7 +50,7 @@ function DrawerBody() {
       <div className='w-full'>
         <button
           type='submit'
-          className='text-white justify-center flex items-center gap-2 bg-purple-700 hover:bg-purple-800 w-full focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800'
+          className='text-white justify-center flex items-center gap-2 bg-primary/85 hover:bg-primary/90 w-full focus:ring-2 focus:ring-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none'
         >
           <FaSave size={18} /> Salvar
         </button>
@@ -59,6 +59,7 @@ function DrawerBody() {
       <ul className='w-full flex flex-col text-red-400 text-sm list-disc px-4'>
         <li>Valores - Minímo: 0 e maxímo: 100</li>
         <li>Porcentagem final deve ser maior que inicial</li>
+        <li>Certifique-se de salvar antes de fechar esta janela</li>
       </ul>
     </form>
   )

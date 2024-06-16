@@ -1,5 +1,6 @@
 'use client'
 import BatteryLevel from 'components/BatteryLevel'
+import CampaignLogo from 'components/Logo/CampaignLogo'
 import Navbar from 'components/Navbar'
 import { motion } from 'framer-motion'
 import { BG_01, IMG_TEMA } from 'images'
@@ -25,13 +26,7 @@ export default function Home() {
             animate='animate'
             custom={2}
           >
-            <Image
-              width={400}
-              height={300}
-              src={IMG_TEMA}
-              alt='no poder do espírito, vamos completar a missão'
-              priority
-            />
+            <CampaignLogo />
           </motion.div>
           <motion.div
             variants={fadeOpacity_2}
@@ -40,12 +35,11 @@ export default function Home() {
             custom={5}
             className='w-full flex flex-col gap-4 text-white bg-black'
           >
-            <span className='text-2xl tracking-normal text-justify'>
-              Mas receberão poder quando o Espírito Santo descer sobre vocês, e
-              serão minhas testemunhas em Jerusalém, em toda a Judéia e Samaria,
-              e até os confins da terra&quot;.
+            <span className='text-2xl tracking-normal text-center'>
+              E disse-lhes: "Vão pelo mundo todo e preguem o evangelho a todas
+              as pessoas."
             </span>
-            <span className='text-lg'>Atos 1:8</span>
+            <span className='text-lg'>Marcos 16:15</span>
           </motion.div>
         </div>
       </div>
@@ -54,8 +48,7 @@ export default function Home() {
         initial='initial'
         animate='animate'
         custom={8}
-        className='absolute bottom-0 left-0 right-0 bg-transparent flex items-center justify-center'
-        style={{ zIndex: -1 }}
+        className='absolute bottom-0 sm:-bottom-8 md:-bottom-10 left-0 right-0 bg-transparent flex items-center justify-center -z-[1]'
       >
         <Image
           width={1000}

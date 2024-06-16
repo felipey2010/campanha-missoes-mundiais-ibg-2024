@@ -1,23 +1,20 @@
 import Drawer from 'components/Drawer'
-import { Button } from 'flowbite-react'
+import CampaignName from 'components/Logo/CampaignName'
 
 function Navbar({ handleModal }) {
   return (
     <div className='w-full flex items-center justify-center relative'>
       <div className='w-full max-w-[1980px] flex items-center justify-between'>
-        <div className='flex items-center gap-2 text-xl sm:text-2xl font-bold'>
-          <span className='text-white'>MISSÕES</span>{' '}
-          <span className='text-[#3f83f8]'>MUNDIAIS</span>
-        </div>
-        <div className='flex items-center gap-4'>
+        <CampaignName />
+        <div className='flex items-center gap-4 h-9'>
           <Drawer />
-          <Button
+          <button
             type='button'
             onClick={handleModal}
-            className='w-[64px] sm:w-[70px] h-8 sm:min-h-9 bg-[#3f83f8] hover:!bg-[#3b70c9]'
+            className='w-16 md:w-20 font-medium flex items-center justify-center sm:w-[70px] h-full bg-primary/85 hover:bg-primary/90 text-white focus:ring-2 focus:ring-white rounded-lg text-sm px-5 py-2.5 focus:outline-none'
           >
             ALVO
-          </Button>
+          </button>
         </div>
       </div>
     </div>

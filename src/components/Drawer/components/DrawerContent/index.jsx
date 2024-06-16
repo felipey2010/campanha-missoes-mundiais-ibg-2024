@@ -1,35 +1,10 @@
-import { slideInFromRight } from 'utils/Animations'
-import DrawerBody from '../DrawerBody'
-import Header from '../Header'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+import Content from './component/Content'
 
 function DrawerContent({ open, handleClick }) {
   return (
     <AnimatePresence>
-      {open && (
-        <motion.div
-          variants={slideInFromRight}
-          initial='hidden'
-          animate='visible'
-          exit='hidden'
-          className='w-full z-40 bg-black/65 fixed left-0 right-0 top-0 bottom-0'
-          style={{
-            minHeight: 'calc(100svh - 16px)',
-          }}
-        >
-          <div className='w-full h-full relative'>
-            <div
-              id='drawer-right-example'
-              className='h-full absolute top-0 right-0 overflow-y-auto bg-gray-900 w-full sm:w-96'
-              tabIndex='-1'
-              aria-labelledby='drawer-right-label'
-            >
-              <Header handleClick={handleClick} />
-              <DrawerBody />
-            </div>
-          </div>
-        </motion.div>
-      )}
+      {open && <Content handleClick={handleClick} />}
     </AnimatePresence>
   )
 }

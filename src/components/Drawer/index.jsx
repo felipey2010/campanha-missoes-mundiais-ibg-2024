@@ -11,7 +11,7 @@ function Drawer() {
 
   return (
     <>
-      <div className='relative'>
+      <div className='h-full relative'>
         <DrawerButton handleClick={handleClick} />
       </div>
 

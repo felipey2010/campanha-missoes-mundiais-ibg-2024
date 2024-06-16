@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: 'rgba(var(--primary) / <alpha-value>)',
+        'primary-accent': 'rgba(var(--primary-accent) / <alpha-value>)',
+        secondary: 'rgba(var(--secondary) / <alpha-value>)',
+        'secondary-accent': 'rgba(var(--secondary-accent) / <alpha-value>)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,6 +20,7 @@ module.exports = {
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
+      playwrite: ['Playwrite CO', 'sans-serif'],
     },
   },
   plugins: [require('flowbite/plugin')],
