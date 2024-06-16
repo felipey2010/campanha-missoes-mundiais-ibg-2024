@@ -18,7 +18,7 @@ function Content({ handleClick }) {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [])
+  }, [handleClick])
 
   return (
     <motion.div

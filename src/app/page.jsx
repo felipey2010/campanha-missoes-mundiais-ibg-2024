@@ -3,7 +3,7 @@ import BatteryLevel from 'components/BatteryLevel'
 import CampaignLogo from 'components/Logo/CampaignLogo'
 import Navbar from 'components/Navbar'
 import { motion } from 'framer-motion'
-import { BG_01, IMG_TEMA } from 'images'
+import { BG_01 } from 'images'
 import Image from 'next/image'
 import { useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
@@ -36,8 +36,8 @@ export default function Home() {
             className='w-full flex flex-col gap-4 text-white bg-black'
           >
             <span className='text-2xl tracking-normal text-center'>
-              E disse-lhes: "Vão pelo mundo todo e preguem o evangelho a todas
-              as pessoas."
+              E disse-lhes&quot; &ldquo;V&#34;o pelo mundo todo e preguem o
+              evangelho a todas as pessoas.&rdquo;
             </span>
             <span className='text-lg'>Marcos 16:15</span>
           </motion.div>
