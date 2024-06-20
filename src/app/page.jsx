@@ -36,10 +36,10 @@ export default function Home() {
             className='w-full flex flex-col gap-4 text-white bg-black'
           >
             <span className='text-2xl tracking-normal text-center'>
-              E disse-lhes&quot; &ldquo;V&#34;o pelo mundo todo e preguem o
-              evangelho a todas as pessoas.&rdquo;
+              E disse-lhes: &ldquo;Vão pelo mundo todo e preguem o evangelho a
+              todas as pessoas.&rdquo;
             </span>
-            <span className='text-lg'>Marcos 16:15</span>
+            <span className='text-xl'>Marcos 16:15</span>
           </motion.div>
         </div>
       </div>

@@ -6,7 +6,7 @@ function CampaignLogo() {
         <h1 className='text-primary font-playwrite font-bold'>Juntos</h1>
       </div>
       <div className='flex items-center gap-2'>
-        <h1 className='text-white font-bold'>Mãos á</h1>
+        <h1 className='text-white font-bold'>Mãos à</h1>
         <h1 className='text-primary font-playwrite font-bold'>Obra!</h1>
       </div>
     </div>
