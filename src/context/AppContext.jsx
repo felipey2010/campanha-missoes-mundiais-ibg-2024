@@ -72,8 +72,15 @@ export default function AppProvider({ children }) {
     return true
   }
 
+  function toggleFullscreen() {
+    const element = document.getElementById('main__body')
+
+    if (element.requestFullscreen) element.requestFullscreen()
+  }
+
   const AppContextValues = {
     onSubmit,
+    toggleFullscreen,
     useFn,
   }
 

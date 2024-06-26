@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-black ${poppins.className}`}
         suppressHydrationWarning={true}
+        id='main__body'
       >
         <ToastifyContainer />
         <AppProvider>{children}</AppProvider>

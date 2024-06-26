@@ -2,6 +2,7 @@
 import BatteryLevel from 'components/BatteryLevel'
 import CampaignLogo from 'components/Logo/CampaignLogo'
 import Navbar from 'components/Navbar'
+import { useApp } from 'context/AppContext'
 import { motion } from 'framer-motion'
 import { BG_01 } from 'images'
 import Image from 'next/image'
@@ -10,8 +11,10 @@ import { fadeOpacity_2 } from 'utils/Animations'
 
 export default function Home() {
   const [show, setShow] = useState(false)
+  const { toggleFullscreen } = useApp()
 
   const handleClick = () => {
+    toggleFullscreen()
     setShow((prev) => !prev)
   }
 
