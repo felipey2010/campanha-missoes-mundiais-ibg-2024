@@ -12,9 +12,9 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Missões Estaduais - IBG',
+  title: 'Missões Nacionais - IBG',
   description:
-    'Alvometro de contribuição em prol de Missões Estaduais 2024 pela Igreja Batista da Graça - Roraima.',
+    'Alvometro de contribuição em prol de Missões Nacionais 2024 pela Igreja Batista da Graça - Roraima.',
 }
 
 export default function RootLayout({ children }) {
