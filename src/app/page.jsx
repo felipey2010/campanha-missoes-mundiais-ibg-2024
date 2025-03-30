@@ -5,14 +5,15 @@ import { useApp } from 'context/AppContext'
 import { motion } from 'framer-motion'
 import { LOGO } from 'images'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
 
-const BIBLE_SCRIPTURE = `Assim que, se alguém está em Cristo, nova criatura é; as coisas velhas já passaram; eis que tudo se fez novo`
-const BIBLE_REFERENCE = `2 Cor. 5 : 17`
+const BIBLE_SCRIPTURE = `"Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."`
+const BIBLE_REFERENCE = `João 3.16`
 
 export default function Home() {
   const [show, setShow] = useState(false)
+  const [scrollY, setScrollY] = useState(0)
   const { toggleFullscreen } = useApp()
 
   const handleClick = () => {
@@ -20,9 +21,18 @@ export default function Home() {
     setShow((prev) => !prev)
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <main className='w-full h-full flex justify-center relative overflow-hidden'>
-      <div className='w-full h-full flex flex-col items-center gap-11 md:w-3/5 p-4'>
+    <main className='w-full h-full z-10 flex justify-center overflow-hidden'>
+      <div className='w-full h-full flex flex-col items-center gap-11 md:w-3/5 p-4 z-10'>
         <Navbar handleModal={handleClick} />
         <div className='w-full h-full text-center flex flex-col items-center justify-center gap-11'>
           <motion.div
@@ -32,7 +42,7 @@ export default function Home() {
             custom={2}
           >
             <Image
-              width={400}
+              width={500}
               height={400}
               src={LOGO}
               alt='imagem de grupo de pessoas'
@@ -45,12 +55,12 @@ export default function Home() {
             initial='initial'
             animate='animate'
             custom={5}
-            className='w-full flex flex-col gap-4 text-white bg-black'
+            className='w-full flex flex-col gap-4 text-white'
           >
-            <span className='text-2xl tracking-normal text-center'>
+            <span className='text-3xl tracking-normal text-center'>
               {BIBLE_SCRIPTURE}
             </span>
-            <span className='text-xl'>{BIBLE_REFERENCE}</span>
+            <span className='text-2xl'>{BIBLE_REFERENCE}</span>
           </motion.div>
         </div>
       </div>
