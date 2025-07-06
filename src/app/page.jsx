@@ -8,8 +8,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
 
-const BIBLE_SCRIPTURE = `"Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."`
-const BIBLE_REFERENCE = `João 3.16`
+const BIBLE_SCRIPTURE = `"O Senhor disse a Moisés: - Por que clamas a mim? Diga ao povo que marche."`
+const BIBLE_REFERENCE = `Êxodo 14:15`
 
 export default function Home() {
   const [show, setShow] = useState(false)

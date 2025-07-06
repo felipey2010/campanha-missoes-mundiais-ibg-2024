@@ -25,7 +25,7 @@ body {
 
 @layer basae {
   :root {
-    --primary: 221 18 18;
+    --primary: 255 185 63;
     --primary-accent: 163 0 241;
     --secondary: 237 238 243;
     --secondary-accent: 225 227 238;
