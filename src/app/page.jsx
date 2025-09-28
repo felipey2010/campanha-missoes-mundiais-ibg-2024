@@ -1,6 +1,6 @@
 'use client'
-import BatteryLevel from 'components/BatteryLevel'
 import Navbar from 'components/Navbar'
+import PercentageBox from 'components/PercentageBox'
 import { useApp } from 'context/AppContext'
 import { motion } from 'framer-motion'
 import { LOGO } from 'images'
@@ -79,7 +79,7 @@ export default function Home() {
           priority
         />
       </motion.div> */}
-      <BatteryLevel show={show} close={handleClick} />
+      <PercentageBox show={show} close={handleClick} />
     </main>
   )
 }

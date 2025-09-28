@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
             <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
               <p>
                 © {new Date().getFullYear()} Missões Estaduais. Todos os
-                direitos reservados. IBG MÍDIA
+                direitos reservados. IBG Mídia
               </p>
               <div className='flex gap-6'>
                 {/* <Link

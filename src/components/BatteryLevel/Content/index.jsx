@@ -1,7 +1,7 @@
 import TargetMeter from 'components/TargetMeter'
 import { useCallback, useEffect, useState } from 'react'
 import { generateRandomNumber } from 'utils/RandomNumberGenerator'
-import PercentageValue from './components/PercentageValue'
+import PercentageValue from './PercentageValue'
 
 function Content({ startLevel = 0, endLevel = 0, startAnimation = false }) {
   const [percentage, setPercentage] = useState(parseInt(startLevel))

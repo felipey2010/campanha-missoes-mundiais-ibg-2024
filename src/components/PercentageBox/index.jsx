@@ -1,10 +1,10 @@
 import PageContent from './PageContent'
 import { AnimatePresence } from 'framer-motion'
 
-const BatteryLevel = ({ show, close }) => {
+const PercentageBox = ({ show, close }) => {
   return (
     <AnimatePresence>{show && <PageContent close={close} />}</AnimatePresence>
   )
 }
 
-export default BatteryLevel
+export default PercentageBox
