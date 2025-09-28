@@ -152,6 +152,11 @@ export const fadeInUp = {
       ease: 'easeIn',
     },
   },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.3, ease: 'easeIn' },
+    y: -60,
+  },
 }
 
 export const fadeInVariants = {
@@ -218,6 +223,10 @@ export const fadeOpacity_2 = {
     transition: {
       delay: 0.1 * index,
       ease: 'easeIn',
+      type: 'spring',
+      // bounce: 0.8,
+      damping: 3,
+      stiffness: 50,
     },
   }),
   exit: {

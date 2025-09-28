@@ -8,8 +8,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
 
-const BIBLE_SCRIPTURE = `"O Senhor disse a Moisés: - Por que clamas a mim? Diga ao povo que marche."`
-const BIBLE_REFERENCE = `Êxodo 14:15`
+const BIBLE_SCRIPTURE = `"… e ainda há muitíssima terra para conquistar."`
+const BIBLE_REFERENCE = `Josué 13.1`
 
 export default function Home() {
   const [show, setShow] = useState(false)
@@ -42,8 +42,8 @@ export default function Home() {
             custom={2}
           >
             <Image
-              width={500}
-              height={400}
+              width={350}
+              height={250}
               src={LOGO}
               alt='imagem de grupo de pessoas'
               priority
@@ -57,7 +57,7 @@ export default function Home() {
             custom={5}
             className='w-full flex flex-col gap-4 text-white'
           >
-            <span className='text-3xl tracking-normal text-center'>
+            <span className='text-2xl tracking-normal text-center italic'>
               {BIBLE_SCRIPTURE}
             </span>
             <span className='text-2xl'>{BIBLE_REFERENCE}</span>

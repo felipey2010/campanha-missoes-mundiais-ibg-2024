@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 import { generateRandomNumber } from 'utils/RandomNumberGenerator'
+import PercentageValueContainer from './percentage-value-container'
 
 function Content({ startLevel = 0, endLevel = 0, startAnimation = false }) {
   const [percentage, setPercentage] = useState(parseInt(startLevel))
@@ -42,7 +43,7 @@ function Content({ startLevel = 0, endLevel = 0, startAnimation = false }) {
 
   return (
     <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center gap-4'>
-      <div className='w-full min-w-20 min-h-56 h-full py-4'>
+      <div className='w-full min-w-20 min-h-56 h-full pb-4'>
         <PercentageCounter
           percentage={startAnimation ? percentage : startLevel}
         />
@@ -61,16 +62,9 @@ const PercentageCounter = ({ percentage }) => {
   return (
     <div className='w-full h-full flex items-center justify-center gap-4 text-6xl font-bold p-4 text-center'>
       {splitPercentage().map((value, index) => (
-        <motion.div
-          key={index}
-          className='w-full max-w-[180px] min-h-[150px] flex items-center justify-center p-4 bg-white/65 rounded-md m-1'
-        >
-          <motion.p>{value}</motion.p>
-        </motion.div>
+        <PercentageValueContainer key={index} value={value} />
       ))}
-      <motion.div className='w-full max-w-[180px] min-h-[150px] flex items-center justify-center p-4 rounded-md bg-white/65 m-1'>
-        <motion.p>%</motion.p>
-      </motion.div>
+      <PercentageValueContainer value='%' />
     </div>
   )
 }

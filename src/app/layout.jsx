@@ -13,9 +13,9 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Missões Mundiais - IBG',
+  title: 'Missões Nacionais - IBG',
   description:
-    'Alvometro de contribuição em prol de Missões Mundiais 2024 pela Igreja Batista da Graça - Roraima.',
+    'Alvometro de contribuição em prol de Missões Nacionais 2025 pela Igreja Batista da Graça - Roraima.',
 }
 
 export default function RootLayout({ children }) {
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           <div className='max-w-7xl mx-auto'>
             <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
               <p>
-                © {new Date().getFullYear()} Missões Estaduais. Todos os
+                © {new Date().getFullYear()} Missões Nacionais. Todos os
                 direitos reservados. IBG Mídia
               </p>
               <div className='flex gap-6'>
