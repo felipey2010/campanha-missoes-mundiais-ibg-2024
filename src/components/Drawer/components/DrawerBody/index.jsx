@@ -1,14 +1,19 @@
 import { useApp } from 'context/AppContext'
 import { FaSave } from 'react-icons/fa'
 
-function DrawerBody() {
+function DrawerBody({ handleClick }) {
   const { useFn, onSubmit } = useApp()
 
   const { register, handleSubmit } = useFn
 
+  const handleSave = (data) => {
+    onSubmit(data)
+    handleClick()
+  }
+
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(handleSave)}
       className='w-full p-4 md:p-5 space-y-6 flex flex-col items-center justify-center'
     >
       <div className='w-full'>

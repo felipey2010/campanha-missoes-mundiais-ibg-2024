@@ -37,7 +37,7 @@ function Content({ handleClick }) {
           aria-labelledby='drawer-right-label'
         >
           <Header handleClick={handleClick} />
-          <DrawerBody />
+          <DrawerBody handleClick={handleClick} />
         </div>
       </div>
     </motion.div>
