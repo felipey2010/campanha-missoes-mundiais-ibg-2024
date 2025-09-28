@@ -43,10 +43,14 @@ function Content({ startLevel = 0, endLevel = 0, startAnimation = false }) {
 
   return (
     <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center gap-4'>
-      <div className='w-full min-w-20 min-h-56 h-full pb-4'>
+      <div className='w-full flex flex-col items-center min-w-20 min-h-56 h-full pb-4'>
         <PercentageCounter
           percentage={startAnimation ? percentage : startLevel}
         />
+        <span className='h-1 w-4/5 border-b border-gray-500'></span>
+        <h2 className='text-center text-5xl font-bold my-6'>
+          DE ALVO ALCANÇADO
+        </h2>
       </div>
     </div>
   )

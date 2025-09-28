@@ -1,7 +1,7 @@
 function Header({ close }) {
   return (
     <div className='flex items-center justify-between p-4 md:p-5 rounded-t'>
-      <h3 className='w-1 text-xl font-semibold text-gray-900 dark:text-white'></h3>
+      <h3 className='w-1 text-xl font-semibold text-white dark:text-white uppercase'></h3>
       <button
         type='button'
         onClick={close}
