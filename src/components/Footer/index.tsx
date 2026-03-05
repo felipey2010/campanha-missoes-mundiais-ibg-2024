@@ -1,3 +1,4 @@
+import { CAMPAIGN_NAME } from 'constants/data'
 import Link from 'next/link'
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
       <div className='max-w-7xl mx-auto'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
           <p>
-            © {new Date().getFullYear()} Missões Nacionais. Todos os direitos
+            © {new Date().getFullYear()} {CAMPAIGN_NAME}. Todos os direitos
             reservados. IBG Mídia
           </p>
           <div className='flex gap-6'>

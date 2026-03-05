@@ -1,5 +1,6 @@
 import Footer from 'components/Footer'
 import ToastifyContainer from 'components/ToastifyContainer'
+import { CAMPAIGN_NAME } from 'constants/data'
 import AppProvider from 'context/AppContext'
 import { Poppins } from 'next/font/google'
 import 'react-toastify/dist/ReactToastify.css'
@@ -13,9 +14,8 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Missões Nacionais - IBG',
-  description:
-    'Alvometro de contribuição em prol de Missões Nacionais 2025 pela Igreja Batista da Graça - Roraima.',
+  title: `${CAMPAIGN_NAME} - IBG`,
+  description: `Alvometro de contribuição em prol de ${CAMPAIGN_NAME} 2026 pela Igreja Batista da Graça - Roraima.`,
 }
 
 export default function RootLayout({ children }) {

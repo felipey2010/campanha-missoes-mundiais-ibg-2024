@@ -8,8 +8,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
 
-const BIBLE_SCRIPTURE = `"… e ainda há muitíssima terra para conquistar."`
-const BIBLE_REFERENCE = `Josué 13.1`
+const BIBLE_SCRIPTURE = `"Aquele que dá testemunho destas coisas diz: Sim, venho em breve! Amém. \nVem, Senhor Jesus!"`
+const BIBLE_REFERENCE = `Apocalipse 22:20`
 
 export default function Home() {
   const [show, setShow] = useState(false)
@@ -46,7 +46,7 @@ export default function Home() {
                 width={350}
                 height={250}
                 src={LOGO}
-                alt='imagem de grupo de pessoas'
+                alt='imagem da campanha de missões'
                 priority
                 className='max-w-sm'
               />
