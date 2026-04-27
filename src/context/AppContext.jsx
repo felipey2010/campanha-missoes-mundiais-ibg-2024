@@ -10,6 +10,8 @@ import {
 } from 'utils/getInitialValues'
 import * as yup from 'yup'
 
+const MINIMUM_PERCENTAGE = 0
+
 const AppContext = createContext()
 
 export default function AppProvider({ children }) {
@@ -59,9 +61,9 @@ export default function AppProvider({ children }) {
     }
 
     if (
-      initialPercentage < 0 ||
-      initialPercentage > 100 ||
-      finalPercentage < 0 ||
+      initialPercentage < MINIMUM_PERCENTAGE ||
+      // initialPercentage > MAXIMUM_INITAL_PERCENTAGE ||
+      finalPercentage < MINIMUM_PERCENTAGE ||
       // finalPercentage > 100 ||
       finalPercentage < initialPercentage ||
       finalPercentage === initialPercentage
