@@ -62,7 +62,7 @@ function DrawerBody({ handleClick }) {
       </div>
 
       <ul className='w-full flex flex-col text-red-400 text-sm list-disc px-4'>
-        <li>Valores - Minímo: 0 e maxímo: 100</li>
+        <li>Valores - Minímo: 0</li>
         <li>Porcentagem final deve ser maior que inicial</li>
         <li>Certifique-se de salvar antes de fechar esta janela</li>
       </ul>

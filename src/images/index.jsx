@@ -1,5 +1,5 @@
 import BG_01 from '../../public/assets/bg_01.png'
 import IMG_TEMA from '../../public/assets/tema.png'
-import LOGO from '../../public/assets/logo_mundiais_2026.png'
+import LOGO from '../../public/assets/miss_estaduais_2.png'
 
 export { BG_01, IMG_TEMA, LOGO }

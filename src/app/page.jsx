@@ -8,8 +8,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
 
-const BIBLE_SCRIPTURE = `"Aquele que dá testemunho destas coisas diz: Sim, venho em breve! Amém. \nVem, Senhor Jesus!"`
-const BIBLE_REFERENCE = `Apocalipse 22:20`
+const BIBLE_SCRIPTURE = `"E o Senhor lhes acrescentava todos os dias os que iam sendo salvos."`
+const BIBLE_REFERENCE = `Atos 2:47b`
 
 export default function Home() {
   const [show, setShow] = useState(false)
@@ -43,8 +43,8 @@ export default function Home() {
               custom={2}
             >
               <Image
-                width={350}
-                height={250}
+                width={500}
+                height={500}
                 src={LOGO}
                 alt='imagem da campanha de missões'
                 priority
@@ -58,10 +58,10 @@ export default function Home() {
               custom={5}
               className='w-full flex flex-col gap-4 text-white'
             >
-              <span className='text-2xl tracking-normal text-center italic'>
+              <span className='text-3xl tracking-normal text-center italic font-semibold'>
                 {BIBLE_SCRIPTURE}
               </span>
-              <span className='text-2xl'>{BIBLE_REFERENCE}</span>
+              <span className='text-3xl font-semibold'>{BIBLE_REFERENCE}</span>
             </motion.div>
           </div>
         )}
