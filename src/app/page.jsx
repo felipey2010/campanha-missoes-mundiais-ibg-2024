@@ -3,13 +3,12 @@ import Navbar from 'components/Navbar'
 import PercentageBox from 'components/PercentageBox'
 import { useApp } from 'context/AppContext'
 import { motion } from 'framer-motion'
-import { LOGO } from 'images'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { fadeOpacity_2 } from 'utils/Animations'
 
-const BIBLE_SCRIPTURE = `"E o Senhor lhes acrescentava todos os dias os que iam sendo salvos."`
-const BIBLE_REFERENCE = `Atos 2:47b`
+const BIBLE_SCRIPTURE = `"Como, pois, invocarão aquele em quem não creram? E como crerão naquele de quem não ouviram falar? E como ouvirão, se não houver quem pregue? E como pregarão, se não forem enviados?"`
+const BIBLE_REFERENCE = `Romanos 10:14, 15`
 
 export default function Home() {
   const [show, setShow] = useState(false)
@@ -43,12 +42,12 @@ export default function Home() {
               custom={2}
             >
               <Image
-                width={500}
-                height={500}
-                src={LOGO}
+                width={350}
+                height={350}
+                src='/assets/logo_missoes_nacionais_2026.png'
                 alt='imagem da campanha de missões'
                 priority
-                className='max-w-sm'
+                className='w-auto max-w-sm md:max-w-lg'
               />
             </motion.div>
             <motion.div
@@ -58,10 +57,10 @@ export default function Home() {
               custom={5}
               className='w-full flex flex-col gap-4 text-white'
             >
-              <span className='text-3xl tracking-normal text-center italic font-semibold'>
+              <span className='text-2xl tracking-normal text-center italic font-semibold'>
                 {BIBLE_SCRIPTURE}
               </span>
-              <span className='text-3xl font-semibold'>{BIBLE_REFERENCE}</span>
+              <span className='text-2xl font-semibold'>{BIBLE_REFERENCE}</span>
             </motion.div>
           </div>
         )}

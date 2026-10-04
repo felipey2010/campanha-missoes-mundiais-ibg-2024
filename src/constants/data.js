@@ -1,1 +1,1 @@
-export const CAMPAIGN_NAME = 'Missões Estaduais'
+export const CAMPAIGN_NAME = 'Missões Nacionais'
