@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 import { generateRandomNumber } from 'utils/RandomNumberGenerator'
 import PercentageValueContainer from './percentage-value-container'
@@ -42,13 +41,13 @@ function Content({ startLevel = 0, endLevel = 0, startAnimation = false }) {
   }, [startAnimation, increment, endLevel, percentage])
 
   return (
-    <div className='p-4 md:p-5 space-y-4 flex flex-col items-center justify-center gap-4'>
-      <div className='w-full flex flex-col items-center min-w-20 min-h-56 h-full pb-4'>
+    <div className='flex flex-col items-center justify-center gap-3 p-3 sm:gap-4 sm:p-4 md:p-5'>
+      <div className='flex h-full min-h-44 w-full min-w-0 flex-col items-center pb-3 sm:min-h-56 sm:pb-4'>
         <PercentageCounter
           percentage={startAnimation ? percentage : startLevel}
         />
         <span className='h-1 w-4/5 border-b border-gray-500'></span>
-        <h2 className='text-center text-5xl font-bold my-6'>
+        <h2 className='my-4 text-center text-2xl font-bold leading-tight sm:my-6 sm:text-4xl md:text-5xl'>
           DE ALVO ALCANÇADO
         </h2>
       </div>
@@ -64,7 +63,7 @@ const PercentageCounter = ({ percentage }) => {
   }
 
   return (
-    <div className='w-full h-full flex items-center justify-center gap-4 text-6xl font-bold p-4 text-center'>
+    <div className='flex h-full w-full items-center justify-center gap-1 p-1 text-center text-[clamp(1.75rem,10vw,3.75rem)] font-bold sm:gap-2 sm:p-3 md:gap-4 md:p-4'>
       {splitPercentage().map((value, index) => (
         <PercentageValueContainer key={index} value={value} />
       ))}

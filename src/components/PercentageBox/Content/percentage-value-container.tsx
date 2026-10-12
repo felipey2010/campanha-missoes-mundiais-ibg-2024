@@ -12,7 +12,7 @@ function PercentageValueContainer({ value }: Props) {
       initial='initial'
       animate='animate'
       exit='exit'
-      className='w-full flex-1 max-w-[180px] min-h-[150px] flex items-center justify-center p-4 bg-white/65 rounded-md m-1'
+      className='flex min-h-20 min-w-0 max-w-[180px] flex-1 items-center justify-center rounded-md bg-white/65 p-1 sm:min-h-28 sm:p-3 md:min-h-[150px] md:p-4'
     >
       <motion.p>{value}</motion.p>
     </motion.div>

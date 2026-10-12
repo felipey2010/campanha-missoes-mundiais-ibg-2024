@@ -10,7 +10,7 @@ function DrawerButton({ handleClick }) {
         aria-label='configuração'
         className='flex items-center justify-center'
       >
-        <IoSettings className='w-7 h-7 md:w-9 md:h-9 text-white/75 hover:text-white' />
+        <IoSettings className='h-7 w-7 text-white/75 hover:text-white md:h-9 md:w-9' />
       </button>
     </Tooltip>
   )

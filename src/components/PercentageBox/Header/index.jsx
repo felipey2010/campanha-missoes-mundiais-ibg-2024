@@ -1,6 +1,6 @@
 function Header({ close }) {
   return (
-    <div className='flex items-center justify-between p-4 md:p-5 rounded-t'>
+    <div className='flex items-center justify-between rounded-t p-3 sm:p-4 md:p-5'>
       <h3 className='w-1 text-xl font-semibold text-white dark:text-white uppercase'></h3>
       <button
         type='button'

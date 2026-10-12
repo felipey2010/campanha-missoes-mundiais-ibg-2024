@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className='absolute bottom-0 w-full p-6 text-center text-sm text-gray-400'>
+    <footer className='relative mt-auto w-full px-4 py-4 text-center text-xs text-gray-400 sm:px-6 sm:py-5 sm:text-sm'>
       <div className='max-w-7xl mx-auto'>
-        <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
+        <div className='flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4'>
           <p>
             © {new Date().getFullYear()} {CAMPAIGN_NAME}. Todos os direitos
             reservados. IBG Mídia

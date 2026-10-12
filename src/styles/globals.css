@@ -11,8 +11,8 @@
 }
 
 body {
-  width: 100svw;
-  height: 100svh;
+  width: 100%;
+  min-height: 100svh;
   transition: all 0.3s ease-in-out;
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;

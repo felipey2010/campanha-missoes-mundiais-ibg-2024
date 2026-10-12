@@ -22,11 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang='pt-br'>
       <body
-        className={`bg-black text-white relative w-full min-h-screen ${poppins.className}`}
+        className={`relative flex min-h-svh w-full flex-col overflow-x-hidden bg-black text-white ${poppins.className}`}
         suppressHydrationWarning={true}
         id='main__body'
       >
-        <div className='absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black z-0 opacity-70' />
+        <div className='pointer-events-none fixed inset-0 z-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-70' />
         <ToastifyContainer />
         <AppProvider>{children}</AppProvider>
         <Footer />

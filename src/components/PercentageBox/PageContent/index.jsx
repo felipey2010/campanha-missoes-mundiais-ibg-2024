@@ -33,9 +33,9 @@ function PageContent({ close }) {
       id='default-modal'
       tabIndex='-1'
       aria-hidden='true'
-      className='overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-svh max-h-full bg-black/50'
+      className='fixed inset-0 z-50 flex h-svh w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-black/50'
     >
-      <div className='p-4 w-full md:max-w-xl lg:max-w-3xl max-h-full'>
+      <div className='max-h-full w-full p-3 sm:p-4 md:max-w-xl lg:max-w-3xl'>
         <div className='relative bg-black rounded-lg shadow border border-gray-400'>
           <Header close={close} />
           <Content
