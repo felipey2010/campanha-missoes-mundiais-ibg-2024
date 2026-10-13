@@ -1,13 +1,37 @@
-const getInitialPercentage = () => {
-  return typeof window !== 'undefined'
-    ? localStorage.getItem('initial_percentage') || 0
-    : 0
+export const STORAGE_KEYS = {
+  initialPercentage: 'initial_percentage',
+  finalPercentage: 'final_percentage',
+  campaignTarget: 'campaign_target',
+  currentAmount: 'current_amount',
 }
 
-const getFinalPercentage = () => {
-  return typeof window !== 'undefined'
-    ? localStorage.getItem('final_percentage') || 0
-    : 0
+const getStoredNumber = (key) => {
+  if (typeof window === 'undefined') return 0
+
+  const value = Number(localStorage.getItem(key))
+  return Number.isFinite(value) ? value : 0
 }
 
-export { getFinalPercentage, getInitialPercentage }
+const getInitialPercentage = () =>
+  getStoredNumber(STORAGE_KEYS.initialPercentage)
+
+const getFinalPercentage = () => getStoredNumber(STORAGE_KEYS.finalPercentage)
+
+const getCampaignTarget = () => getStoredNumber(STORAGE_KEYS.campaignTarget)
+
+const getCurrentAmount = () => getStoredNumber(STORAGE_KEYS.currentAmount)
+
+const getStoredCampaignValues = () => ({
+  initial_percentage: getInitialPercentage(),
+  final_percentage: getFinalPercentage(),
+  campaign_target: getCampaignTarget(),
+  current_amount: getCurrentAmount(),
+})
+
+export {
+  getCampaignTarget,
+  getCurrentAmount,
+  getFinalPercentage,
+  getInitialPercentage,
+  getStoredCampaignValues,
+}
