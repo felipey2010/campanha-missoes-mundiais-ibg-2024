@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
+import confetti from 'canvas-confetti'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { generateRandomNumber } from 'utils/RandomNumberGenerator'
 import PercentageValueContainer from './percentage-value-container'
 
@@ -6,6 +7,7 @@ const currencyFormatter = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
   currency: 'BRL',
 })
+const CONFETTI_DELAY_MS = 600
 
 function Content({
   startLevel = 0,
@@ -19,6 +21,7 @@ function Content({
   const targetAmount = Number(campaignTarget) || 0
   const raisedAmount = Number(currentAmount) || 0
   const [percentage, setPercentage] = useState(initialPercentage)
+  const hasTriggeredConfetti = useRef(false)
 
   useEffect(() => {
     setPercentage(initialPercentage)
@@ -37,6 +40,33 @@ function Content({
         Math.min(currentPercentage + step, finalPercentage)
       )
     }, delay)
+
+    return () => clearTimeout(timer)
+  }, [finalPercentage, percentage, startAnimation])
+
+  useEffect(() => {
+    const hasReachedFinalValue = percentage >= finalPercentage
+
+    if (
+      !startAnimation ||
+      !hasReachedFinalValue ||
+      finalPercentage <= 0 ||
+      hasTriggeredConfetti.current
+    ) {
+      return
+    }
+
+    hasTriggeredConfetti.current = true
+    const timer = setTimeout(() => {
+      confetti({
+        particleCount: 150,
+        spread: 160,
+        startVelocity: 45,
+        origin: { y: 0.6 },
+        zIndex: 100,
+        disableForReducedMotion: true,
+      })
+    }, CONFETTI_DELAY_MS)
 
     return () => clearTimeout(timer)
   }, [finalPercentage, percentage, startAnimation])
